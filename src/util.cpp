@@ -108,7 +108,7 @@ using namespace std;
 // Ohmcoin only features
 // Karmanode
 bool fMasterNode = false;
-string strMasterNodePrivKey = "";
+string strKarmaNodePrivKey = "";
 string strMasterNodeAddr = "";
 bool fLiteMode = false;
 // SwiftX

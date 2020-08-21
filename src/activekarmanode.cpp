@@ -100,7 +100,7 @@ void CActiveKarmanode::ManageStatus()
             CPubKey pubKeyKarmanode;
             CKey keyKarmanode;
 
-            if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, keyKarmanode, pubKeyKarmanode)) {
+            if (!obfuScationSigner.SetKey(strKarmaNodePrivKey, errorMessage, keyKarmanode, pubKeyKarmanode)) {
                 notCapableReason = "Error upon calling SetKey: " + errorMessage;
                 LogPrintf("Register::ManageStatus() - %s\n", notCapableReason);
                 return;
@@ -162,7 +162,7 @@ bool CActiveKarmanode::SendKarmanodePing(std::string& errorMessage)
     CPubKey pubKeyKarmanode;
     CKey keyKarmanode;
 
-    if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, keyKarmanode, pubKeyKarmanode)) {
+    if (!obfuScationSigner.SetKey(strKarmaNodePrivKey, errorMessage, keyKarmanode, pubKeyKarmanode)) {
         errorMessage = strprintf("Error upon calling SetKey: %s\n", errorMessage);
         return false;
     }

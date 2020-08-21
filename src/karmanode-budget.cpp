@@ -2199,7 +2199,7 @@ void CFinalizedBudget::SubmitVote()
     CKey keyKarmanode;
     std::string errorMessage;
 
-    if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, keyKarmanode, pubKeyKarmanode)) {
+    if (!obfuScationSigner.SetKey(strKarmaNodePrivKey, errorMessage, keyKarmanode, pubKeyKarmanode)) {
         LogPrint("knbudget","CFinalizedBudget::SubmitVote - Error upon calling SetKey\n");
         return;
     }

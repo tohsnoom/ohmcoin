@@ -608,7 +608,7 @@ void CObfuscationPool::CheckFinalTransaction()
         CKey key2;
         CPubKey pubkey2;
 
-        if (!obfuScationSigner.SetKey(strMasterNodePrivKey, strError, key2, pubkey2)) {
+        if (!obfuScationSigner.SetKey(strKarmaNodePrivKey, strError, key2, pubkey2)) {
             LogPrintf("CObfuscationPool::Check() - ERROR: Invalid Karmanodeprivkey: '%s'\n", strError);
             return;
         }
@@ -2193,7 +2193,7 @@ bool CObfuscationQueue::Sign()
     CPubKey pubkey2;
     std::string errorMessage = "";
 
-    if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, key2, pubkey2)) {
+    if (!obfuScationSigner.SetKey(strKarmaNodePrivKey, errorMessage, key2, pubkey2)) {
         LogPrintf("CObfuscationQueue():Relay - ERROR: Invalid Karmanodeprivkey: '%s'\n", errorMessage);
         return false;
     }

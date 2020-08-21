@@ -731,7 +731,7 @@ bool CKarmanodePayments::ProcessBlock(int nBlockHeight)
     CPubKey pubKeyKarmanode;
     CKey keyKarmanode;
 
-    if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, keyKarmanode, pubKeyKarmanode)) {
+    if (!obfuScationSigner.SetKey(strKarmaNodePrivKey, errorMessage, keyKarmanode, pubKeyKarmanode)) {
         LogPrint("karmanode","CKarmanodePayments::ProcessBlock() - Error upon calling SetKey: %s\n", errorMessage.c_str());
         return false;
     }

@@ -399,7 +399,7 @@ UniValue knbudgetvote(const UniValue& params, bool fHelp)
         UniValue statusObj(UniValue::VOBJ);
 
         while (true) {
-            if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, keyKarmanode, pubKeyKarmanode)) {
+            if (!obfuScationSigner.SetKey(strKarmaNodePrivKey, errorMessage, keyKarmanode, pubKeyKarmanode)) {
                 failed++;
                 statusObj.push_back(Pair("node", "local"));
                 statusObj.push_back(Pair("result", "failed"));
@@ -949,7 +949,7 @@ UniValue knfinalbudget(const UniValue& params, bool fHelp)
         CKey keyKarmanode;
         std::string errorMessage;
 
-        if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, keyKarmanode, pubKeyKarmanode))
+        if (!obfuScationSigner.SetKey(strKarmaNodePrivKey, errorMessage, keyKarmanode, pubKeyKarmanode))
             return "Error upon calling SetKey";
 
         CKarmanode* pmn = mnodeman.Find(activeKarmanode.vin);

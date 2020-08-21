@@ -506,9 +506,9 @@ bool CConsensusVote::Sign()
     CPubKey pubkey2;
     std::string strMessage = txHash.ToString().c_str() + std::to_string(nBlockHeight);
     //LogPrintf("signing strMessage %s \n", strMessage.c_str());
-    //LogPrintf("signing privkey %s \n", strMasterNodePrivKey.c_str());
+    //LogPrintf("signing privkey %s \n", strKarmaNodePrivKey.c_str());
 
-    if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, key2, pubkey2)) {
+    if (!obfuScationSigner.SetKey(strKarmaNodePrivKey, errorMessage, key2, pubkey2)) {
         LogPrintf("CConsensusVote::Sign() - ERROR: Invalid karmanodeprivkey: '%s'\n", errorMessage.c_str());
         return false;
     }

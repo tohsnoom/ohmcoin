@@ -1861,14 +1861,14 @@ bool AppInit2(boost::thread_group& threadGroup, CScheduler& scheduler)
             }
         }
 
-        strMasterNodePrivKey = GetArg("-karmanodeprivkey", "");
-        if (!strMasterNodePrivKey.empty()) {
+        strKarmaNodePrivKey = GetArg("-karmanodeprivkey", "");
+        if (!strKarmaNodePrivKey.empty()) {
             std::string errorMessage;
 
             CKey key;
             CPubKey pubkey;
 
-            if (!obfuScationSigner.SetKey(strMasterNodePrivKey, errorMessage, key, pubkey)) {
+            if (!obfuScationSigner.SetKey(strKarmaNodePrivKey, errorMessage, key, pubkey)) {
                 return InitError(_("Invalid karmanodeprivkey. Please see documenation."));
             }
 
